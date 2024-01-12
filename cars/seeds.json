@@ -1,0 +1,70 @@
+[
+{
+  "model": "cars.car",
+  "pk": 1,
+  "fields": {
+    "make": "Audi",
+    "model": "S3",
+    "year": 2001,
+    "image": "https://www.ultimatespecs.com/wallpaper.php?id=1555",
+    "bodystyle": "Hatchback",
+    "engine": "2l I4",
+    "power": 224,
+    "layout": "4wd",
+    "weight": 1420,
+    "description": "Fast car",
+    "owner": 1
+  }
+},
+{
+  "model": "cars.car",
+  "pk": 2,
+  "fields": {
+    "make": "Audi",
+    "model": "A2",
+    "year": 2000,
+    "image": "https://www.ultimatespecs.com/wallpaper.php?id=1553",
+    "bodystyle": "Hatchback",
+    "engine": "1.6l I4",
+    "power": 105,
+    "layout": "Fwd",
+    "weight": 900,
+    "description": "Slow car",
+    "owner": 1
+  }
+},
+{
+  "model": "cars.car",
+  "pk": 4,
+  "fields": {
+    "make": "Audi",
+    "model": "A1",
+    "year": 2010,
+    "image": "https://www.ultimatespecs.com/wallpaper.php?id=1343",
+    "bodystyle": "Hatchback",
+    "engine": "1.2l I4",
+    "power": 85,
+    "layout": "2wd",
+    "weight": 1100,
+    "description": "Very slow car",
+    "owner": 2
+  }
+},
+{
+  "model": "cars.car",
+  "pk": 5,
+  "fields": {
+    "make": "Audi",
+    "model": "A4",
+    "year": 1999,
+    "image": "https://www.ultimatespecs.com/wallpaper.php?id=1346",
+    "bodystyle": "Saloon",
+    "engine": "2.8l V6",
+    "power": 190,
+    "layout": "4wd",
+    "weight": 1400,
+    "description": "Slowish car",
+    "owner": 2
+  }
+}
+]
