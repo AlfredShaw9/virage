@@ -16,4 +16,4 @@ class Comment(models.Model):
   )
 
   def __str__(self):
-    return f"Comment by {self.owner} on car {self.car_to_id}"
+    return f"Comment by {self.owner} on {self.car_to_id}"
