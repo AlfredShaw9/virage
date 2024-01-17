@@ -4,6 +4,7 @@ from lib.views import OwnerListCreateView
 from lib.permissions import IsOwnerOrReadOnly
 from .models import Car
 from .serializers.common import CarSerializer
+from .serializers.populated import PopulatedCarSerializer
 
 # Path: /cars/
 # Methods: GET, POST
@@ -16,7 +17,7 @@ class CarIndexCreateView(OwnerListCreateView):
 # Methods: GET, PUT, PATCH, DELETE
 class CarDetailView(RetrieveUpdateDestroyAPIView):
   queryset = Car.objects.all()
-  serializer_class = CarSerializer
+  serializer_class = PopulatedCarSerializer
   permission_classes = [IsOwnerOrReadOnly]
   
 # Path: /garage/:user-id/
@@ -24,5 +25,5 @@ class CarDetailView(RetrieveUpdateDestroyAPIView):
 class GarageView(ListAPIView):
   def get_queryset(self):
     return Car.objects.filter(owner_id=self.kwargs['pk'])
-  serializer_class = CarSerializer
+  serializer_class = PopulatedCarSerializer
   permission_classes = [IsOwnerOrReadOnly]
