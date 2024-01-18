@@ -20,7 +20,7 @@ export default function CreateCar(){
     bodystyle: 'Hatchback',
     engine: '',
     power: '',
-    layout: '',
+    layout: 'FWD',
     weight: '',
     description: '',
     image: ''
@@ -78,7 +78,7 @@ export default function CreateCar(){
               </select>
             </div>
             <div className='formField'>
-              <label form='engine'>Engine (e.g: '2L I4', '5L V8'):</label>
+              <label form='engine'>{"Engine (e.g: '2L I4', '5L V8'):"}</label>
               <input type="text" name="engine" placeholder='Engine'  onChange={handleChange}  value={formData.engine}/>
             </div>
             <div className='formField'>

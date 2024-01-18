@@ -1,6 +1,16 @@
+.indexPageCont{
+  padding-top: 10vh;
+  display: flex;
+  flex-direction: column;
+  // justify-content: center;
+  align-items: center;
+  height: 90vh;
+}
+
 .topText{
   text-align: left;
-  width: 85vw;
+  width: 90vw;
+  max-width: 1300px;
   h1{
     margin: 5px 0px;
   }
@@ -9,17 +19,18 @@
   }
   .seperator{
     height: 2px;
-    width: 20vw;
+    width: 90vw;
+    max-width: 1300px;
     background-color: $light-grey;
   }
 }
 
 
 .indexCont{
-  // border: 2px solid white;
   display: flex;
   width: 90vw;
-  height: 90vh;
+  max-width: 1300px;
+  height: 70vh;
   padding: 2vh;
   flex-wrap: wrap;
   justify-content: center;
@@ -28,14 +39,13 @@
     &::-webkit-scrollbar {
     display: none;
   }
+  a{
+    text-decoration: none;
+    margin: 2vh 2vh;
+  }
 }
 
-a{
-  text-decoration: none;
-  margin: 2vh 2vh;
-}
-
-.garage{
+.garageInd{
   border: 1px solid $darker-purple;
   box-shadow: 0 0 1px 2px $darker-purple;
   border-radius: 5px;
@@ -47,6 +57,8 @@ a{
   &:hover {
     transform: scale(1.1);
   }
+
+  // The weave pattern code was obtained from this site: https://css-pattern.com/
 
   --s: 4px; /* size of the lines */
   --g: 1px; /* gap between lines */
@@ -85,7 +97,7 @@ a{
 }
 
 .guIcon{
-  width: 20vh;
+  width: 200px;
   height: 200px;
   background-image:url('../assets/active_garage_icon.png');
   background-size: contain;

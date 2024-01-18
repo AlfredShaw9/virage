@@ -13,8 +13,12 @@ export async function getAllGarages() {
 }
 
 export async function getGaragedCars(id) {
-  const res = await fetch(`/api/cars/garage/${id}`)
-  return res.json()
+  const resOwner = await fetch(`/api/users/${id}`)
+  const resCars = await fetch(`/api/cars/garage/${id}`)
+  return json({
+    owner: await resOwner.json(),
+    cars: await resCars.json(),
+  })
 }
 
 export async function getCarData(id) {

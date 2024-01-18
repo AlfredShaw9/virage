@@ -14,11 +14,11 @@ export default function GarageIndex(){
   
   return (
     <>
-      <div className='spacer'>
+      <div className='indexPageCont'>
         <div className='topText'>
           <h1>Garages</h1>
+          <p>{ `Select a garage below to view user's cars` }</p>
           <div className='seperator'></div>
-          <p>Something Here</p>
         </div>
         <section className='indexCont'>
           { allGarages?.length > 0
@@ -33,12 +33,12 @@ export default function GarageIndex(){
               >
                 {username === getUser()
                 ?
-                <div className='garage'>
+                <div className='garageInd'>
                   <div className='guIcon'/>
                   <p>{`${username}'s Garage (You)`}</p>
                 </div>
                 :
-                <div className='garage'>
+                <div className='garageInd'>
                   <div className='gIcon'/>
                   <p>{`${username}'s Garage`}</p>
                 </div>
