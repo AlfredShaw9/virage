@@ -13,8 +13,8 @@ export async function getAllGarages() {
 }
 
 export async function getGaragedCars(id) {
-  const resOwner = await fetch(`/api/users/${id}`)
-  const resCars = await fetch(`/api/cars/garage/${id}`)
+  const resOwner = await fetch(`/api/users/${id}/`)
+  const resCars = await fetch(`/api/cars/garage/${id}/`)
   return json({
     owner: await resOwner.json(),
     cars: await resCars.json(),
@@ -22,6 +22,6 @@ export async function getGaragedCars(id) {
 }
 
 export async function getCarData(id) {
-  const res = await fetch(`/api/cars/${id}`)
+  const res = await fetch(`/api/cars/${id}/`)
   return res.json()
 }

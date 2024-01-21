@@ -8,6 +8,6 @@ export async function getAllSpotted() {
 }
 
 export async function getSpotted(id) {
-  const res = await fetch(`/api/carstoid/${id}`)
+  const res = await fetch(`/api/carstoid/${id}/`)
   return res.json()
 }

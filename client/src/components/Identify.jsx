@@ -28,7 +28,7 @@ export default function Identify(){
   useEffect(() =>{
     async function getComments(id){
       try {
-        const res = await fetch (`/api/comments/cartoid/${id}`)
+        const res = await fetch (`/api/comments/cartoid/${id}/`)
         const data = await res.json()
         setComments(data)
       } catch (error) {
