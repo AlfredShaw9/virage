@@ -1,8 +1,9 @@
 // & Imports
 // * Packages
+import { useEffect, useState } from 'react'
 import { useLoaderData, Link } from 'react-router-dom'
 import { getUser } from '../utils/helpers/common'
-import { playHover, playPress, playBack } from '../utils/helpers/sounds'
+import { playHover, playPress } from '../utils/helpers/sounds'
 
 // * Images
 
@@ -11,6 +12,24 @@ import { playHover, playPress, playBack } from '../utils/helpers/sounds'
 export default function GarageIndex(){
 
   const allGarages = useLoaderData()
+
+  // * State
+  const [ search, setSearch ] = useState('')
+  const [ filteredGarages, setFilteredGarages ] = useState('')
+
+  // * Functions
+  function handleChange(e){
+    setSearch(e.target.value)
+  }
+
+  // * Effects
+  useEffect(() => {
+    const pattern = new RegExp(search, 'i')
+    const filteredArr = allGarages.filter(garage => {
+      return pattern.test(garage.username)
+    })
+    setFilteredGarages(filteredArr)
+  }, [allGarages, search])
   
   return (
     <>
@@ -21,9 +40,10 @@ export default function GarageIndex(){
           <div className='seperator'></div>
         </div>
         <section className='indexCont'>
-          { allGarages?.length > 0
+        <input name='search' placeholder='Search...' value={search} onChange={handleChange} onMouseDown={playHover} />
+          { filteredGarages?.length > 0
           ?
-          allGarages.map(garage => {
+          filteredGarages.map(garage => {
             const { id, username } = garage
             return (
               <Link onMouseEnter={playHover} onMouseDown={playPress}

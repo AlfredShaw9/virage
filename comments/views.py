@@ -9,5 +9,9 @@ from .models import Comment
 class CommentCreateView(CommentListCreateView):
   def get_queryset(self):
     return Comment.objects.filter(car_to_id=self.kwargs['pk'])
-  serializer_class = PopulatedCommentSerializer
+  def get_serializer_class(self):
+      if self.request.method == 'GET':
+        return PopulatedCommentSerializer
+      return CommentSerializer
   permission_classes = [IsAuthenticatedOrReadOnly]
+  

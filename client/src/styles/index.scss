@@ -2,9 +2,11 @@
 @import './global/variables.scss';
 @import './global/main.scss';
 @import './global/form.scss';
+@import './global/GlobalIndex.scss';
 
 // & Components
 @import './components/Header.scss';
 @import './components/Home.scss';
-@import './components/GarageIndex.scss';
 @import './components/Garage.scss';
+@import './components/Car.scss';
+@import './components/Identify.scss';

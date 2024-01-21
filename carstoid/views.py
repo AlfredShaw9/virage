@@ -3,6 +3,7 @@ from rest_framework.permissions import IsAuthenticatedOrReadOnly
 from lib.views import OwnerListCreateView
 from lib.permissions import IsOwnerOrReadOnly
 from .serializers.common import CarToIdSerializer
+from .serializers.populated import PopulatedCarToIdSerializer
 from .models import CarToId
 
 # Path: /carstoid/
@@ -16,5 +17,8 @@ class CarToIdCreateView(OwnerListCreateView):
 # Methods: GET, PUT, PATCH, DELETE
 class CarToIdSingleView(RetrieveUpdateDestroyAPIView):
   queryset = CarToId.objects.all()
-  serializer_class = CarToIdSerializer
   permission_classes = [IsOwnerOrReadOnly]
+  def get_serializer_class(self):
+    if self.request.method == 'GET':
+      return PopulatedCarToIdSerializer
+    return CarToIdSerializer

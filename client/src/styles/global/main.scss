@@ -25,3 +25,21 @@ main {
   font-family: 'Saira', sans-serif;
   color: $white,
 }
+
+.back{
+  text-align: center;
+  width: 155px;
+  transition: transform .2s;
+  &:hover {
+    transform: scale(1.2);
+  }
+}
+
+a{
+  text-decoration: none;
+}
+
+.symbol{
+  font-size: 25px;
+  font-weight: bold;
+}

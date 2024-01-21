@@ -1,6 +1,7 @@
 // & Imports
 import axios from 'axios'
 import { getToken } from '../helpers/common.js'
+import { redirect } from 'react-router-dom'
 
 // & Functions
 
@@ -20,4 +21,14 @@ export async function editCar(data, id) {
         Authorization: `Bearer ${getToken()}`
       }
   })
+}
+
+export async function deleteCar(id) {
+  await axios.delete(`/api/cars/${id}/`, {
+    validateStatus: () => true,
+      headers: {
+        Authorization: `Bearer ${getToken()}`
+      }
+  })
+  return redirect('/garages')
 }

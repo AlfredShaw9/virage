@@ -1,9 +1,9 @@
 // & Imports
 // * Packages
 import { useLoaderData, Link } from 'react-router-dom'
+import { playHover, playPress, playBack } from '../utils/helpers/sounds'
 
 // * Images
-import placeholder from '../assets/car_placeholder.png'
 
 // & Default function
 export default function IdentifyIndex(){
@@ -12,23 +12,31 @@ export default function IdentifyIndex(){
   
   return (
     <>
-      <div className='spacer'>   
-        <h1>Identify Index</h1>
-        <section>
+      <div className='indexPageCont'>
+        <div className='topText'>
+          <h1>Car Spotter</h1>
+          <div className='addCarToId'>
+            <Link onMouseEnter={playHover} onMouseDown={playPress} as={Link} to={`/spotted/addSpotted`}>
+              <p><span className='symbol'>+</span> Post car to identify</p>
+            </Link>
+          </div>
+          <p>{ `Help identify cars other users have seen` }</p>
+          <div className='seperator'></div>
+        </div>
+        <section className='indexCont'>
           { allSpotted?.length > 0
           ?
           allSpotted.map(cartoid => {
             const { id, image } = cartoid
             return (
-              <Link
-              key = {id}
-              as = {Link}
-              to = {`/spotted/${id}`}
-              >
-                <div>
-                  <img src={placeholder}/>
-                </div>
-              </Link>
+              <div className='spottedInd' key = {id}>
+                <Link onMouseEnter={playHover} onMouseDown={playPress}
+                as = {Link}
+                to = {`/spotted/${id}`}
+                >
+                  <img src={image}/>
+                </Link>
+              </div>
             )
           })
           :

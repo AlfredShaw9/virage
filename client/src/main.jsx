@@ -16,12 +16,14 @@ import EditCar from './components/EditCar.jsx'
 import Car from './components/Car.jsx'
 import IdentifyIndex from './components/IdentifyIndex.jsx'
 import Identify from './components/Identify.jsx'
+import CreateIdentify from './components/CreateIdentify.jsx'
 
 // * Actions/Loaders
 import { loginUser, registerUser } from './utils/actions/auth.js'
 import { getAllGarages, getGaragedCars, getCarData } from './utils/loaders/garage.js'
 import { getAllSpotted, getSpotted } from './utils/loaders/spotted.js'
-import { createCar, editCar } from './utils/actions/car.js'
+import { createCar, editCar, deleteCar } from './utils/actions/car.js'
+import { createIdentify, createComment } from './utils/actions/spotted.js'
 
 // * Styling
 import './styles/index.scss'
@@ -73,14 +75,24 @@ const router = createBrowserRouter([
         action: async ({ request, params }) => editCar(request, params.carId)
       },
       {
+        path: '/garages/cars/:carId/delete',
+        action: async ({ params }) => deleteCar(params.carId)
+      },
+      {
         path: '/spotted',
         element: <IdentifyIndex />,
         loader: getAllSpotted
       },
       {
+      path: '/spotted/addSpotted',
+      element: <CreateIdentify />,
+      action: async ({ request }) => createIdentify(request)
+      },
+      {
         path: '/spotted/:spottedId',
         element: <Identify />,
         loader: async ({ params }) => getSpotted(params.spottedId),
+        action: async ({ request }) => createComment(request)
       }
     ]
   }

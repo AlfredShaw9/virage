@@ -1,0 +1,131 @@
+.carBg{
+  padding-top: 10vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  background-image: url('../assets/showroom_bg.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  image-rendering: optimizeQuality;
+}
+
+.carCont{
+  width: 90vw;
+  max-width: 1300px;
+  max-height: 95vh;
+  display: flex;
+  flex-direction: column;
+  div, p, h1, .symbol, button {
+    color: $darker-purple;
+  }
+}
+
+.topCont{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 500px;
+  .sideMenu{
+    box-sizing: border-box;
+    width: 30%;
+    height: fit-content;
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 10px 20px;
+    margin-right: 10px;
+    border-radius: 5px;
+    .editCar, .deleteCar{
+      text-align: center;
+      transition: transform .2s;
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+    .editCar{
+      width: 80px;
+    }
+    .deleteCar{
+      width: 100px;
+      button{
+        color: rgb(203, 0, 0);
+        border: none;
+        margin: 0px;
+        background: none;
+        font-size: 16px;
+      }
+    }
+  }
+  .imageCont{
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img{
+      height: auto;
+      max-height: 100%;
+      width: auto;
+      max-width: 100%;
+      border-radius: 10px;
+    }
+  }
+}
+
+.detailsCont{
+  display: flex;
+  flex-direction: row;
+  max-height: 25vh;
+  width: auto;
+  .descCont{
+    width: 30%;
+    .descHeader{
+      font-weight: bold;
+    }
+    .desc{
+      overflow: scroll;
+      overflow-x: hidden;
+      height: 80%;
+      margin: 0;
+      padding-right: 10px;
+    }
+  }
+  .specsCont{
+    width: 70%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 0px 10px;
+    .colHeader{
+      p{
+        margin: 10px;
+        font-weight: bold;
+      }
+    }
+    .carSpacerHead{
+      height: 1px;
+      background-color: $light-grey;
+      margin: 0px 10px;
+    }
+    .specsColCont{
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      .carSpacer{
+        height: 1px;
+        background-color: $light-grey;
+      }
+      .col{
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        width: 50%;
+        div{
+          display: flex;
+          justify-content: space-between;
+          margin: 0px 10px
+        }
+      }
+    }
+  }
+}

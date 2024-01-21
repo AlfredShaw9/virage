@@ -1,0 +1,106 @@
+.idPageCont{
+  margin-top: 15vh;
+  height: 85vh;
+  position: absolute;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sizeCont{
+  max-width: 1300px;
+  height: 85vh;
+  display: flex;
+  justify-content: center;
+}
+
+.leftCont{
+  width: 55vw;
+  height: 90%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  .spottedBack{
+    width: 200px;
+  }
+  .textCont{
+    height: 15%;
+    width: 100%;
+    text-align: center;
+  }
+  .imgCont{
+    height: 75%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    img{
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+}
+
+.commentCont{
+  display: flex;
+  flex-direction: column;
+  width: 25vw;
+  height: 90%;
+  margin-left: 20px;
+  p{
+    margin: 0;
+  }
+  .featured{
+    height: 15%;
+    .featuredComment{
+    box-sizing: border-box;
+    background-color: rgba(61, 34, 79, 0.3);
+    border-radius: 5px;
+    border: 2px solid $light-grey;
+    height: 70%;
+    width: 95%;
+    padding: 5px;
+    }
+  }
+  .comments{
+    overflow: scroll;
+    height: 60%;
+    .user{
+      font-weight: bold;
+      font-size: 17px;
+    }
+    .commentIndv{
+      box-sizing: border-box;
+      background-color: rgba(0, 0, 0, 0.3);
+      border: 2px solid $light-grey;
+      border-radius: 5px;
+      margin-top: 10px;
+      width: 95%;
+      line-height: 23px;
+      p{
+        margin: 0 5px;
+      }
+    }
+  }
+  .commentSubmit{
+    height: 10%;
+    textarea{
+      box-sizing: border-box;
+      height: 100%;
+      margin-top: 10px;
+      min-height: 100%;
+      max-height: 100%;
+      min-width: 95%;
+      max-width: 95%;
+      background-color: rgba(0, 0, 0, 0.3);
+      border: none;
+    }
+    button {
+      border-radius: 4px;
+      padding: 5px 15px;
+      margin-left: 0px;
+      width: 80%;
+      font-size: 15px;
+    }
+  }
+}

@@ -20,7 +20,7 @@ export default function Register(){
   
   return (
     <>
-      <div className='cont'>
+      <div className='spacer'>
         <div className='formCont'>
           <Form method="POST">
             <div className='dataFormFields'>

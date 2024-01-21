@@ -1,19 +1,47 @@
 .formCont {
-  // background-color: gold;
-  padding: 10vh;
   width: 40vw;
+  min-width: 600px;
+  margin-bottom: 10vh;
+  // overflow: hidden;
 }
 
 h1, p{
   margin: 10px 0px;
 }
 
+.fieldSep{
+  display: flex;
+  flex-direction: row;
+  .s1, .s2 {
+    box-sizing: border-box;
+    padding-right: 20px;
+  }
+  .s1{
+    width: 35%;
+    min-width: 200px;
+  }
+  .s2{
+    width: 65%;
+    min-width: 400px;
+  }
+}
+
 .formField {
   display: flex;
   flex-direction: column;
-  input {
+  img {
+    max-height: 200px;
+    object-fit: contain;
+  }
+  textarea{
+    max-height: 180px;
+    min-width: 200px;
+  }
+  input, select, textarea {
     background-color: rgba(0, 0, 0, 0.3);
     border: 2px solid $light-grey;
+    width: 100%;
+    max-width: 100%;
   }
 }
 
