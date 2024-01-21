@@ -1,7 +1,7 @@
 // & Imports
 // * Packages
 import { useLoaderData, Link } from 'react-router-dom'
-import { playHover, playPress, playBack } from '../utils/helpers/sounds'
+import { playHover, playPress } from '../utils/helpers/sounds'
 
 // * Images
 
@@ -40,7 +40,7 @@ export default function IdentifyIndex(){
             )
           })
           :
-          <p>No cars to display</p>
+          <p>No images to display</p>
           }
         </section>
       </div>
