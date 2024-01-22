@@ -4,6 +4,7 @@ import { useLoaderData, Link } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import { createComment } from '../utils/actions/spotted'
 import { playHover, playPress, playBack } from '../utils/helpers/sounds'
+import { getUser } from '../utils/helpers/common'
 
 // * Images
 
@@ -106,12 +107,14 @@ export default function Identify(){
                 <p>No comments yet :(</p>
                 }
               </div>
-            <form className='commentSubmit' onSubmit={handleSubmit}>
-              <textarea name="text" placeholder='Type comment here' onMouseDown={playHover} onChange={handleChange}/>
-              <div className='buttonCont'>
-                <button type='submit' onMouseDown={playPress}>Post comment</button>
-              </div>
-            </form>
+            {getUser() &&
+              <form className='commentSubmit' onSubmit={handleSubmit}>
+                <textarea name="text" placeholder='Type comment here' onMouseDown={playHover} onChange={handleChange}/>
+                <div className='buttonCont'>
+                  <button type='submit' onMouseDown={playPress}>Post comment</button>
+                </div>
+              </form>
+            }
           </div>
         </div>
       </div>

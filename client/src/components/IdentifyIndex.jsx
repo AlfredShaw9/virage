@@ -2,6 +2,7 @@
 // * Packages
 import { useLoaderData, Link } from 'react-router-dom'
 import { playHover, playPress } from '../utils/helpers/sounds'
+import { getUser } from '../utils/helpers/common'
 
 // * Images
 
@@ -15,11 +16,13 @@ export default function IdentifyIndex(){
       <div className='indexPageCont'>
         <div className='topText'>
           <h1>Car Spotter</h1>
-          <div className='addCarToId'>
-            <Link onMouseEnter={playHover} onMouseDown={playPress} as={Link} to={`/spotted/addSpotted`}>
-              <p><span className='symbol'>+</span> Post car to identify</p>
-            </Link>
-          </div>
+          {getUser() &&
+            <div className='addCarToId'>
+              <Link onMouseEnter={playHover} onMouseDown={playPress} as={Link} to={`/spotted/addSpotted`}>
+                <p><span className='symbol'>+</span> Post car to identify</p>
+              </Link>
+            </div>
+          }
           <p>{ `Help identify cars other users have seen` }</p>
           <div className='seperator'></div>
         </div>
