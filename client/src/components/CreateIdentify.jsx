@@ -43,10 +43,10 @@ export default function CreateIdentify(){
             <h1>Show us what you spotted</h1>
             <p>Upload an image below to post to the car spotter:</p>
 
-            <div className='formField'>
+            {/* <div className='formField'>
               <label form='description'>Description:</label>
               <textarea name="description" placeholder='Descripton'  onChange={handleChange}  value={formData.description}/>
-            </div>
+            </div> */}
             <div className='formField'>
               <label form='imageUpload'>Image Upload:</label>
               <ImageUploadField setFormData={setFormData} formData={formData} onChange={handleChange}/>
@@ -55,7 +55,7 @@ export default function CreateIdentify(){
           </div>
 
           <div className='buttonCont'>
-            <button type="submit">Add to garage</button>
+            <button type="submit">Help me identify!</button>
           </div>
 
         </form>
