@@ -11,6 +11,11 @@ main {
   margin-top: 10vh;
 }
 
+// ::-webkit-scrollbar {
+//   display: none;
+// }
+
+
 .spacer {
   padding-top: 10vh;
   // padding-bottom: 10vh;
@@ -23,7 +28,7 @@ main {
 
 * {
   font-family: 'Saira', sans-serif;
-  color: $white,
+  color: $white;
 }
 
 .back{

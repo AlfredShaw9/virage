@@ -65,6 +65,7 @@
   .comments{
     overflow: scroll;
     height: 60%;
+    overflow-x: hidden;
     .user{
       font-weight: bold;
       font-size: 17px;
